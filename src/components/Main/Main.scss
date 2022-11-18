@@ -1,0 +1,44 @@
+.main {
+  text-align: center;
+  .paragraph {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .ant-slider-with-marks {
+    margin-bottom: 0px !important;
+  }
+  .slider {
+    width: 50%;
+    margin: 0 auto;
+    padding: 25px 0px 15px 0px;
+
+    &__name {
+      font-size: 0.9rem;
+    }
+  }
+  .switch-group {
+    // display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    &__charset-element {
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        font-weight: 400;
+      }
+    }
+  }
+  .button {
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 4px 0 darken(#1890ff, 10%);
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-2px);
+    }
+    &:active {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+  }
+}
