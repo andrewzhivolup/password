@@ -3,12 +3,18 @@ import "./Header.scss";
 
 const Header = () => {
   const [password, setPassword] = useState("Password");
+  const seconds = 3;
+
   useEffect(() => {
     setTimeout(() => {
       setPassword(passwordTitleSwap());
-    }, 3000);
+    }, seconds * 1000);
   }, [password]);
 
+  /**
+   * Функция, которая перемешивает элементы массива titleList и возвращает случайный элемент массива.
+   * @return {string} Один из элементов массива titleList.
+   */
   const passwordTitleSwap = () => {
     const titleList = [
       "Password",
@@ -20,7 +26,6 @@ const Header = () => {
       "=^.__.^=",
     ];
     titleList.sort(() => Math.random() - 0.5);
-
     return password !== titleList[0] ? titleList[0] : titleList[1];
   };
 

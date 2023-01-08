@@ -14,6 +14,7 @@ const Main = () => {
   const letters = "abcdefghijklmnopqrstuvwxyz";
   const numbers = "1234567890";
   const specialSimbols = "!@#$%^&*()-_+=;:,./?\\|`~[]{}";
+
   useEffect(() => {
     generatePassword();
   }, [
@@ -31,12 +32,12 @@ const Main = () => {
     if (numbersBool) charset += numbers;
     if (specialSimbolsBool) charset += specialSimbols;
     let password = "";
-    console.log(charset);
     for (let i = 0; i < passwordLength; ++i) {
       password += charset.charAt(Math.floor(Math.random() * charset.length));
     }
     setPassword(password);
   };
+
   const trueColor = "#a1db84";
   const falseColor = "#ff6e6e";
   const blackColor = "#000";
@@ -56,6 +57,7 @@ const Main = () => {
       label: max,
     },
   };
+  
   return (
     <div className="main">
       <Paragraph
