@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <div className="header">
-            <h1 className="h1">{password} Generator</h1>
+            <h2 className="h2">v{version}</h2>
         </div>
     );
 };
