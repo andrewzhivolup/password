@@ -1,13 +1,13 @@
-import React from 'react';
-import './Header.scss';
+import cls from './Header.module.scss';
 
 const Header = () => {
-    const version = process.env.REACT_APP_VERSION;
+    //eslint-disable-next-line
+    const version = __APP_VERSION__;
 
     return (
-        <div className="header">
-            <h1 className="h1">password generator</h1>
-            <h2 className="h2">v{version}</h2>
+        <div className={cls.Header}>
+            <h1 className={cls.title}>password generator</h1>
+            <h2 className={cls.version}>v{version}</h2>
         </div>
     );
 };

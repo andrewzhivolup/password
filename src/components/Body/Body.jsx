@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Slider, Switch, Typography } from 'antd';
-import './Main.scss';
+import './Body.scss';
 
-const Main = () => {
+const Body = () => {
     const { Paragraph } = Typography;
     const [password, setPassword] = useState('');
     const [passwordLength, setPasswordLength] = useState(10);
@@ -24,7 +24,6 @@ const Main = () => {
         numbersBool,
         specialSymbolsBool,
     ]);
-
     const generatePassword = () => {
         let charset = '';
         if (upperCaseBool) charset += letters.toUpperCase();
@@ -33,7 +32,9 @@ const Main = () => {
         if (specialSymbolsBool) charset += specialSymbols;
         let password = '';
         for (let i = 0; i < passwordLength; ++i) {
-            password += charset.charAt(Math.floor(Math.random() * charset.length));
+            password += charset.charAt(
+                Math.floor(Math.random() * charset.length)
+            );
         }
         setPassword(password);
     };
@@ -57,7 +58,7 @@ const Main = () => {
             label: max,
         },
     };
-  
+
     return (
         <div className="main">
             <Paragraph
@@ -65,7 +66,7 @@ const Main = () => {
                 style={{
                     color: passwordLength < 10 ? falseColor : trueColor,
                 }}
-                copyable={{ tooltips: ['Копировать','Скопировано']}}
+                copyable={{ tooltips: ['Копировать', 'Скопировано'] }}
             >
                 {password}
             </Paragraph>
@@ -84,10 +85,14 @@ const Main = () => {
             </div>
             <div className="switch-group">
                 <div className="switch-group__charset-element">
-                    <p className="switch-group__charset-element__name">Прописные буквы</p>
+                    <p className="switch-group__charset-element__name">
+                        Прописные буквы
+                    </p>
                     <Switch
                         disabled={
-                            !lowerCaseBool && !numbersBool && !specialSymbolsBool
+                            !lowerCaseBool &&
+                            !numbersBool &&
+                            !specialSymbolsBool
                         }
                         className="switch-group__charset-element__switch"
                         defaultChecked
@@ -97,10 +102,14 @@ const Main = () => {
                     />
                 </div>
                 <div className="switch-group__charset-element">
-                    <p className="switch-group__charset-element__name">Строчные</p>
+                    <p className="switch-group__charset-element__name">
+                        Строчные
+                    </p>
                     <Switch
                         disabled={
-                            !upperCaseBool && !numbersBool && !specialSymbolsBool
+                            !upperCaseBool &&
+                            !numbersBool &&
+                            !specialSymbolsBool
                         }
                         defaultChecked
                         onChange={(value) => {
@@ -112,7 +121,9 @@ const Main = () => {
                     <p className="switch-group__charset-element__name">Цифры</p>
                     <Switch
                         disabled={
-                            !upperCaseBool && !lowerCaseBool && !specialSymbolsBool
+                            !upperCaseBool &&
+                            !lowerCaseBool &&
+                            !specialSymbolsBool
                         }
                         defaultChecked
                         onChange={(value) => {
@@ -135,11 +146,15 @@ const Main = () => {
                     />
                 </div>
             </div>
-            <Button className="button" type="primary" onClick={generatePassword}>
+            <Button
+                className="button"
+                type="primary"
+                onClick={generatePassword}
+            >
                 Сгенерировать
             </Button>
         </div>
     );
 };
 
-export default Main;
+export default Body;

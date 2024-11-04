@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-
 export function useKonamiCode(handler) {
     const [keys, setKeys] = useState([]);
 
-    const isKonamiCode = keys.join(' ') === 'up up down down left right left right B A';
+    const isKonamiCode =
+        keys.join(' ') === 'up up down down left right left right B A';
 
     useEffect(() => {
         let timeout;
