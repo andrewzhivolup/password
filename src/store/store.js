@@ -89,11 +89,11 @@ export const usePassword = create((set) => ({
     },
 }));
 
-// export const useCrigneMode = create((set) => ({
-//     cringeMode: false,
-//     activeCringeMode: () => {
-//         set(() => ({
-//             cringeMode: true,
-//         }));
-//     },
-// }));
+export const useCrigneMode = create((set) => ({
+    cringeMode: false,
+    activeCringeMode: () => {
+        set(() => ({
+            cringeMode: true,
+        }));
+    },
+}));
