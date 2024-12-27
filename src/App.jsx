@@ -1,11 +1,17 @@
-import { Body } from './components/Body';
-import { Header } from './components/Header';
+import { GenerateButton } from '@components/GenerateButton';
+import { Header } from '@components/Header';
+import { Password } from '@components/Password';
+import { Settings } from '@components/Settings';
+import { Slider } from '@components/Slider';
 
 function App() {
     return (
         <>
             <Header />
-            <Body />
+            <Password />
+            <Slider />
+            <Settings />
+            <GenerateButton />
         </>
     );
 }
