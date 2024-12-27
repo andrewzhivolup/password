@@ -16,7 +16,7 @@ const settings = {
     lowerCase: {
         title: 'Строчные буквы',
         charset: letters,
-        state: false,
+        state: true,
     },
     numbers: {
         title: 'Цифры',
