@@ -1,3 +1,3 @@
-import { useNoteStore } from '@store/store';
+// import { useLanguage } from '../store';
 
-export { useNoteStore };
+// export { useLanguage };

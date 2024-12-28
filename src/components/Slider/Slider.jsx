@@ -1,9 +1,11 @@
-import { usePassword } from '@store/store';
+import { usePassword, useSettings } from '@store/store';
 import { Slider } from 'antd';
+import { useTranslation } from 'react-i18next';
 import cls from './Slider.module.scss';
-import { useSettings } from '@store/store';
 
 function _Slider() {
+    const { t } = useTranslation();
+
     const passwordLength = useSettings((state) => state.passwordLength);
     const setPasswordLength = useSettings((state) => state.setPasswordLength);
     const minPasswordLength = useSettings((state) => state.minPasswordLength);
@@ -33,7 +35,7 @@ function _Slider() {
                     generatePassword();
                 }}
             />
-            <p className={cls.SliderHint}>Длина пароля</p>
+            <p className={cls.SliderHint}>{t('Длина пароля')}</p>
         </div>
     );
 }

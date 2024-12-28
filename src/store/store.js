@@ -97,3 +97,19 @@ export const useCrigneMode = create((set) => ({
         }));
     },
 }));
+
+export const useLanguage = create(
+    persist(
+        (set) => ({
+            language: 'ru',
+            setLanguage: (language) => {
+                set(() => ({
+                    language,
+                }));
+            },
+        }),
+        {
+            name: 'language',
+        }
+    )
+);

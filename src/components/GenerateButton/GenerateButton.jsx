@@ -1,11 +1,13 @@
-import { usePassword, useCrigneMode } from '@store/store';
+import { useCrigneMode, usePassword } from '@store/store';
+import { playWisp } from '@utils/playWisp';
 import { Button } from 'antd';
 import { useEffect } from 'react';
-import { playWisp } from '@utils/playWisp';
-
+import { useTranslation } from 'react-i18next';
 import cls from './GenerateButton.module.scss';
 
 function GenerateButton() {
+    const { t } = useTranslation();
+
     const generatePassword = usePassword((state) => state.generatePassword);
 
     const cringeMode = useCrigneMode((state) => state.cringeMode);
@@ -28,7 +30,7 @@ function GenerateButton() {
                 type="primary"
                 onClick={onClick}
             >
-                Сгенерировать
+                {t('Сгенерировать')}
             </Button>
         </div>
     );

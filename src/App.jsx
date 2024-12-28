@@ -1,10 +1,11 @@
 import { GenerateButton } from '@components/GenerateButton';
 import { Header } from '@components/Header';
+import { LocalesButton } from '@components/LocalesButton';
 import { Password } from '@components/Password';
 import { Settings } from '@components/Settings';
 import { Slider } from '@components/Slider';
-import { useCrigneMode } from '@store/store';
 import { useKonamiCode } from '@hooks/useKonamiCode';
+import { useCrigneMode } from '@store/store';
 import { playWisp } from '@utils/playWisp';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
     return (
         <>
+            <LocalesButton />
             <Header />
             <Password />
             <Slider />

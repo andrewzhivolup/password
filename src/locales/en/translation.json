@@ -1,0 +1,13 @@
+{
+    "генератор паролей": "password generator",
+    "версия": "version",
+    "РУС": "RU",
+    "АНГ": "EN",
+    "КИТ": "ZH",
+    "Длина пароля": "Password length",
+    "Сгенерировать": "Generate",
+    "Прописные буквы": "Uppercase letters",
+    "Строчные буквы": "Lowercase letters",
+    "Цифры": "Numbers",
+    "Специальные символы": "Special Characters"
+}
