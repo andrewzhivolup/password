@@ -16,6 +16,8 @@ function LocalesButton() {
     const locales = {
         en: 'АНГ',
         ru: 'РУС',
+        zh: 'КИТ',
+        ja: 'ЯПО',
     };
 
     return (
