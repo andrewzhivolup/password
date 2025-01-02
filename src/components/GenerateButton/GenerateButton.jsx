@@ -1,4 +1,4 @@
-import { useCrigneMode, usePassword, useSettings } from '@store/store';
+import { useCrigneMode, usePassword, useSettings } from '@store';
 import { playWisp } from '@utils/playWisp';
 import { Button } from 'antd';
 import { useEffect } from 'react';

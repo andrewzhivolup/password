@@ -1,4 +1,4 @@
-import { usePassword, useSettings } from '@store/store';
+import { usePassword, useSettings } from '@store';
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cls from './Password.module.scss';

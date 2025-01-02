@@ -1,4 +1,4 @@
-import { useSettings } from '@store/store';
+import { useSettings } from '@store';
 import { Slider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cls from './Slider.module.scss';

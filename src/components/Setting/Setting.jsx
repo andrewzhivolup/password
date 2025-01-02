@@ -1,4 +1,4 @@
-import { usePassword, useSettings } from '@store/store';
+import { usePassword, useSettings } from '@store';
 import { Switch } from 'antd';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';

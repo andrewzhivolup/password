@@ -1,4 +1,4 @@
-import { useSettings } from '@store/store';
+import { useSettings } from '@store';
 import { Setting } from '../Setting';
 import cls from './Settings.module.scss';
 

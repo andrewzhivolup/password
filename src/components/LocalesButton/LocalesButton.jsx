@@ -1,4 +1,4 @@
-import { useLanguage } from '@store/store';
+import { useLanguage } from '@store';
 import { FloatButton } from 'antd';
 import { useTranslation } from 'react-i18next';
 

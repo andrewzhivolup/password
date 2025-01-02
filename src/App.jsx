@@ -5,7 +5,7 @@ import { Password } from '@components/Password';
 import { Settings } from '@components/Settings';
 import { Slider } from '@components/Slider';
 import { useKonamiCode } from '@hooks/useKonamiCode';
-import { useCrigneMode } from '@store/store';
+import { useCrigneMode } from '@store';
 import { playWisp } from '@utils/playWisp';
 
 function App() {
