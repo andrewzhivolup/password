@@ -1,6 +1,6 @@
 import { GenerateButton } from '@components/GenerateButton';
 import { Header } from '@components/Header';
-import { LocalesButton } from '@components/LocalesButton';
+import { OverlayButtons } from '@components/OverlayButtons';
 import { Password } from '@components/Password';
 import { Settings } from '@components/Settings';
 import { Slider } from '@components/Slider';
@@ -18,7 +18,7 @@ function App() {
 
     return (
         <>
-            <LocalesButton />
+            <OverlayButtons />
             <Header />
             <Password />
             <Slider />
