@@ -1,6 +1,7 @@
 import { useAdvancedMode, useSettings } from '@store';
 import { InputNumber, Modal, Switch, Tabs } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { defaultParameters } from '@utils/defaultParameters';
 import cls from './SettingsModal.module.scss';
 
 function SetAdvancedModeSwitch() {
@@ -34,6 +35,7 @@ function SettingsModal(proprs) {
     const setMaxPasswordLength = useSettings(
         (state) => state.setMaxPasswordLength
     );
+    const setPasswordLength = useSettings((state) => state.setPasswordLength);
     const setRecommendedPasswordLength = useSettings(
         (state) => state.setRecommendedPasswordLength
     );
@@ -173,6 +175,18 @@ function SettingsModal(proprs) {
     useEffect(() => {
         if (!advancedMode) {
             setActiveKey('4');
+
+            const {
+                passwordLength,
+                recommendedPasswordLength,
+                minPasswordLength,
+                maxPasswordLength,
+            } = defaultParameters;
+
+            setMinPasswordLength(minPasswordLength);
+            setMaxPasswordLength(maxPasswordLength);
+            setPasswordLength(passwordLength);
+            setRecommendedPasswordLength(recommendedPasswordLength);
         }
         if (advancedMode) {
             setActiveKey('1');
