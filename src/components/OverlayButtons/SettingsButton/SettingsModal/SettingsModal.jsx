@@ -25,6 +25,7 @@ function SettingsModal(proprs) {
 
     const minPasswordLength = useSettings((state) => state.minPasswordLength);
     const maxPasswordLength = useSettings((state) => state.maxPasswordLength);
+    const passwordCount = useSettings((state) => state.passwordCount);
     const recommendedPasswordLength = useSettings(
         (state) => state.recommendedPasswordLength
     );
@@ -35,6 +36,7 @@ function SettingsModal(proprs) {
     const setMaxPasswordLength = useSettings(
         (state) => state.setMaxPasswordLength
     );
+    const setPasswordCount = useSettings((state) => state.setPasswordCount);
     const setPasswordLength = useSettings((state) => state.setPasswordLength);
     const setRecommendedPasswordLength = useSettings(
         (state) => state.setRecommendedPasswordLength
@@ -86,11 +88,11 @@ function SettingsModal(proprs) {
                 text: 'Количество паролей:',
                 component: (
                     <InputNumber
-                        min={1}
-                        max={100}
-                        value={1}
-                        // disabled={!advancedMode}
-                        disabled
+                        min={minValue}
+                        max={maxValue}
+                        value={passwordCount}
+                        disabled={!advancedMode}
+                        onChange={setPasswordCount}
                     />
                 ),
             },
@@ -113,6 +115,7 @@ function SettingsModal(proprs) {
             maxPasswordLength,
             recommendedPasswordLength,
             advancedMode,
+            passwordCount,
         ]
     );
 
@@ -181,12 +184,14 @@ function SettingsModal(proprs) {
                 recommendedPasswordLength,
                 minPasswordLength,
                 maxPasswordLength,
+                passwordCount,
             } = defaultParameters;
 
             setMinPasswordLength(minPasswordLength);
             setMaxPasswordLength(maxPasswordLength);
             setPasswordLength(passwordLength);
             setRecommendedPasswordLength(recommendedPasswordLength);
+            setPasswordCount(passwordCount);
         }
         if (advancedMode) {
             setActiveKey('1');

@@ -8,7 +8,7 @@ function Password() {
 
     const { t } = useTranslation();
 
-    const password = usePassword((state) => state.password);
+    const passwords = usePassword((state) => state.passwords);
     const passwordLength = useSettings((state) => state.passwordLength);
     const recommendedPasswordLength = useSettings(
         (state) => state.recommendedPasswordLength
@@ -24,15 +24,25 @@ function Password() {
     }
 
     return (
-        <Paragraph
-            className={cls.Password}
-            style={{
-                color: getPasswordColor(passwordLength),
-            }}
-            copyable={{ tooltips: [t('Копировать'), t('Скопировано')] }}
-        >
-            {password}
-        </Paragraph>
+        <>
+            {passwords.map((password, key) => {
+                return (
+                    <Paragraph
+                        key={key}
+                        className={cls.Password}
+                        style={{
+                            color: getPasswordColor(passwordLength),
+                            margin: '10px',
+                        }}
+                        copyable={{
+                            tooltips: [t('Копировать'), t('Скопировано')],
+                        }}
+                    >
+                        {password}
+                    </Paragraph>
+                );
+            })}
+        </>
     );
 }
 

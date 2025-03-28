@@ -11,6 +11,7 @@ const {
     maxPasswordLength,
     minValue,
     maxValue,
+    passwordCount,
 } = defaultParameters;
 
 const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -46,7 +47,11 @@ function validateState(state) {
         maxPasswordLength,
         passwordLength,
         recommendedPasswordLength,
+        passwordCount,
     } = state;
+
+    passwordCount = Math.max(minValue, passwordCount);
+    passwordCount = Math.min(passwordCount, maxValue);
 
     minPasswordLength = Math.max(minValue, minPasswordLength);
     minPasswordLength = Math.min(minPasswordLength, maxPasswordLength - 1);
@@ -70,6 +75,7 @@ function validateState(state) {
         maxPasswordLength,
         passwordLength,
         recommendedPasswordLength,
+        passwordCount,
     };
 }
 
@@ -84,6 +90,15 @@ export const useSettings = create(
             minPasswordLength,
             maxPasswordLength,
             recommendedPasswordLength,
+            passwordCount,
+
+            setPasswordCount: (newCount) =>
+                set((state) =>
+                    validateState({
+                        ...state,
+                        passwordCount: newCount,
+                    })
+                ),
 
             setMinPasswordLength: (newMin) =>
                 set((state) =>
@@ -156,14 +171,21 @@ export const useSettings = create(
 );
 
 export const usePassword = create((set) => ({
-    password: '',
+    passwords: [],
     generatePassword: () => {
         set(() => {
             const setting = useSettings.getState().settings;
             const passwordLength = useSettings.getState().passwordLength;
+            const passwordCount = useSettings.getState().passwordCount;
             const charset = generateCharset(setting);
-            const password = generatePassword(charset, passwordLength);
-            return { password };
+
+            const passwords = [];
+
+            for (let i = 0; i < passwordCount; i++) {
+                const password = generatePassword(charset, passwordLength);
+                passwords.push(password);
+            }
+            return { passwords };
         });
     },
 }));

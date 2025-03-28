@@ -8,12 +8,14 @@ import cls from './GenerateButton.module.scss';
 function GenerateButton() {
     const { t } = useTranslation();
     const generatePassword = usePassword((state) => state.generatePassword);
+    const passwordCount = useSettings((state) => state.passwordCount);
+
     const passwordLength = useSettings((state) => state.passwordLength);
     const cringeMode = useCrigneMode((state) => state.cringeMode);
 
     useEffect(() => {
         generatePassword();
-    }, [passwordLength]);
+    }, [passwordLength, passwordCount]);
 
     function clickHandler() {
         if (cringeMode) {
