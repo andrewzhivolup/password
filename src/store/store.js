@@ -230,3 +230,12 @@ export const useLanguage = create(
         }
     )
 );
+
+export const useModal = create((set) => ({
+    isOpenModal: false,
+    setIsOpenModal: (isOpenModal) => {
+        set(() => ({
+            isOpenModal,
+        }));
+    },
+}));

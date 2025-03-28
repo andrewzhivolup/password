@@ -24,7 +24,11 @@ function Password() {
     }
 
     return (
-        <>
+        <div
+            style={{
+                marginBottom: '15px',
+            }}
+        >
             {passwords.map((password, key) => {
                 return (
                     <Paragraph
@@ -42,7 +46,7 @@ function Password() {
                     </Paragraph>
                 );
             })}
-        </>
+        </div>
     );
 }
 

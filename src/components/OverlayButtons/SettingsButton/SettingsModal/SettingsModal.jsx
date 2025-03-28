@@ -1,4 +1,4 @@
-import { useAdvancedMode, useSettings } from '@store';
+import { useAdvancedMode, useSettings, useModal } from '@store';
 import { InputNumber, Modal, Switch, Tabs } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { defaultParameters } from '@utils/defaultParameters';
@@ -15,8 +15,9 @@ function SetAdvancedModeSwitch() {
     );
 }
 
-function SettingsModal(proprs) {
-    const { isModalOpen, handleCancel } = proprs;
+function SettingsModal() {
+    const isOpenModal = useModal((state) => state.isOpenModal);
+    const setIsOpenModal = useModal((state) => state.setIsOpenModal);
 
     const advancedMode = useAdvancedMode((state) => state.advancedMode);
 
@@ -202,8 +203,8 @@ function SettingsModal(proprs) {
         <>
             <Modal
                 title={generateModalTitle()}
-                open={isModalOpen}
-                onCancel={handleCancel}
+                open={isOpenModal}
+                onCancel={() => setIsOpenModal(false)}
                 footer={[]}
             >
                 <Tabs

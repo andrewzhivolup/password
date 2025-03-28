@@ -1,4 +1,4 @@
-import { useSettings } from '@store';
+import { useModal, useSettings } from '@store';
 import { Slider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cls from './Slider.module.scss';
@@ -9,6 +9,8 @@ function _Slider() {
     const setPasswordLength = useSettings((state) => state.setPasswordLength);
     const minPasswordLength = useSettings((state) => state.minPasswordLength);
     const maxPasswordLength = useSettings((state) => state.maxPasswordLength);
+
+    const isOpenModal = useModal((state) => state.isOpenModal);
 
     const marks = {
         [minPasswordLength]: {
@@ -26,7 +28,7 @@ function _Slider() {
                 min={minPasswordLength}
                 max={maxPasswordLength}
                 marks={marks}
-                tooltip={{ open: true }}
+                tooltip={{ open: !isOpenModal }}
                 onChange={(value) => {
                     setPasswordLength(value);
                 }}
