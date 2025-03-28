@@ -98,6 +98,22 @@ export const useCrigneMode = create((set) => ({
     },
 }));
 
+export const useAdvancedMode = create(
+    persist(
+        (set) => ({
+            advancedMode: false,
+            setAdvancedMode: (advancedMode) => {
+                set(() => ({
+                    advancedMode,
+                }));
+            },
+        }),
+        {
+            name: 'advancedMode',
+        }
+    )
+);
+
 export const useLanguage = create(
     persist(
         (set) => ({

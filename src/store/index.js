@@ -1,1 +1,7 @@
-export { useCrigneMode, useLanguage, usePassword, useSettings } from './store';
+export {
+    useAdvancedMode,
+    useCrigneMode,
+    useLanguage,
+    usePassword,
+    useSettings,
+} from './store';
