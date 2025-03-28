@@ -12,5 +12,14 @@
     "Цифры": "Numbers",
     "Специальные символы": "Special Characters",
     "Копировать": "Copy",
-    "Скопировано": "Copied"
+    "Скопировано": "Copied",
+    "Настройки": "Settings",
+    "Числовые значения": "Numeric values",
+    "Графика": "Graphics",
+    "Экспорт/Импорт": "Export/Import",
+    "Минимальная длина пароля": "Minimum password length",
+    "Максимальная длина пароля": "Maximum password length",
+    "Рекомендуемая длина пароля": "Recommended password length",
+    "Количество паролей": "Number of passwords",
+    "Количество сохраняемых паролей": "Number of saved passwords"
 }

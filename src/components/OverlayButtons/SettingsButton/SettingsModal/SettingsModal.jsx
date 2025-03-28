@@ -1,7 +1,8 @@
-import { useAdvancedMode, useSettings, useModal } from '@store';
+import { useAdvancedMode, useModal, useSettings } from '@store';
+import { defaultParameters } from '@utils/defaultParameters';
 import { InputNumber, Modal, Switch, Tabs } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { defaultParameters } from '@utils/defaultParameters';
+import { useTranslation } from 'react-i18next';
 import cls from './SettingsModal.module.scss';
 
 function SetAdvancedModeSwitch() {
@@ -16,6 +17,8 @@ function SetAdvancedModeSwitch() {
 }
 
 function SettingsModal() {
+    const { t } = useTranslation();
+
     const isOpenModal = useModal((state) => state.isOpenModal);
     const setIsOpenModal = useModal((state) => state.setIsOpenModal);
 
@@ -47,7 +50,7 @@ function SettingsModal() {
         () => [
             {
                 key: 0,
-                text: 'Минимальная длина пароля:',
+                text: t('Минимальная длина пароля') + ':',
                 component: (
                     <InputNumber
                         min={minValue}
@@ -60,7 +63,7 @@ function SettingsModal() {
             },
             {
                 key: 1,
-                text: 'Максимальная длина пароля:',
+                text: t('Максимальная длина пароля') + ':',
                 component: (
                     <InputNumber
                         min={minPasswordLength + 1}
@@ -73,7 +76,7 @@ function SettingsModal() {
             },
             {
                 key: 2,
-                text: 'Рекомендуемая длина пароля:',
+                text: t('Рекомендуемая длина пароля') + ':',
                 component: (
                     <InputNumber
                         min={minPasswordLength}
@@ -86,7 +89,7 @@ function SettingsModal() {
             },
             {
                 key: 3,
-                text: 'Количество паролей:',
+                text: t('Количество паролей') + ':',
                 component: (
                     <InputNumber
                         min={minValue}
@@ -99,7 +102,7 @@ function SettingsModal() {
             },
             {
                 key: 4,
-                text: 'Количество сохраняемых паролей:',
+                text: t('Количество сохраняемых паролей') + ':',
                 component: (
                     <InputNumber
                         min={0}
@@ -112,6 +115,7 @@ function SettingsModal() {
             },
         ],
         [
+            t,
             minPasswordLength,
             maxPasswordLength,
             recommendedPasswordLength,
@@ -146,18 +150,18 @@ function SettingsModal() {
     const settingsTabs = [
         {
             key: '1',
-            label: 'Числовые значения',
+            label: t('Числовые значения'),
             children: <NumericSettings />,
             disabled: !advancedMode,
         },
         {
             key: '2',
-            label: 'Графика',
+            label: t('Графика'),
             disabled: true,
         },
         {
             key: '3',
-            label: 'Экспорт/Импорт',
+            label: t('Экспорт/Импорт'),
             disabled: true,
         },
         {
@@ -168,9 +172,9 @@ function SettingsModal() {
 
     function generateModalTitle() {
         return (
-            <>
-                Настройки: <SetAdvancedModeSwitch />
-            </>
+            <div className={cls.title}>
+                {t('Настройки')}: <SetAdvancedModeSwitch />
+            </div>
         );
     }
 
