@@ -53,11 +53,11 @@ function validateState(state) {
     passwordCount = Math.max(minValue, passwordCount);
     passwordCount = Math.min(passwordCount, maxValue);
 
-    minPasswordLength = Math.max(minValue, minPasswordLength);
-    minPasswordLength = Math.min(minPasswordLength, maxPasswordLength - 1);
-
     maxPasswordLength = Math.max(minPasswordLength + 1, maxPasswordLength);
     maxPasswordLength = Math.min(maxPasswordLength, maxValue);
+
+    minPasswordLength = Math.max(minValue, minPasswordLength);
+    minPasswordLength = Math.min(minPasswordLength, maxPasswordLength - 1);
 
     passwordLength = Math.max(
         minPasswordLength,
