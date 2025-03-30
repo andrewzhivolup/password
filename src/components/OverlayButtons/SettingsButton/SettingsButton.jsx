@@ -1,8 +1,7 @@
 import { SettingOutlined } from '@ant-design/icons';
-import { FloatButton } from 'antd';
-import { useState } from 'react';
-import { SettingsModal } from './SettingsModal';
+import { SettingsModal } from '@components/SettingsModal';
 import { useModal } from '@store';
+import { FloatButton } from 'antd';
 
 function SettingsButton() {
     const setIsOpenModal = useModal((state) => state.setIsOpenModal);
