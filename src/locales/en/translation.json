@@ -21,5 +21,11 @@
     "Максимальная длина пароля": "Maximum password length",
     "Рекомендуемая длина пароля": "Recommended password length",
     "Количество паролей": "Number of passwords",
-    "Количество сохраняемых паролей": "Number of saved passwords"
+    "Количество сохраняемых паролей": "Number of saved passwords",
+    "Основной цвет": "Primary color",
+    "Цвет фона": "Background color",
+    "Цвет текста": "Text color",
+    "Цвет тултипов": "Tooltip color",
+    "Позитивный цвет": "Positive color",
+    "Негативный цвет": "Negative color"
 }
