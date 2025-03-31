@@ -7,6 +7,9 @@ const passwordCount = 1;
 const minValue = 1;
 const maxValue = 1000;
 
+const primaryColor = '#1677FF';
+const textColor = '#ffffff';
+
 export const defaultParameters = {
     passwordLength,
     recommendedPasswordLength,
@@ -15,4 +18,6 @@ export const defaultParameters = {
     passwordCount,
     minValue,
     maxValue,
+    primaryColor,
+    textColor,
 };

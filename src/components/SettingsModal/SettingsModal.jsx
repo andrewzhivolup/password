@@ -3,6 +3,7 @@ import { useAdvancedMode, useModal } from '@store';
 import { Modal, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { GraphicSettingsTab } from './GraphicSettingsTab';
 import { ModalTitle } from './ModalTitle';
 import { NumericSettingsTab } from './NumericSettingsTab';
 
@@ -36,7 +37,8 @@ function SettingsModal() {
         {
             key: '2',
             label: t('Графика'),
-            disabled: true,
+            children: <GraphicSettingsTab />,
+            disabled: !advancedMode,
         },
         {
             key: '3',

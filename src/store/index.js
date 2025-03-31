@@ -1,8 +1,9 @@
 export {
     useAdvancedMode,
+    useColor,
     useCrigneMode,
     useLanguage,
+    useModal,
     usePassword,
     useSettings,
-    useModal,
 } from './store';

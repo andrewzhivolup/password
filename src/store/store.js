@@ -12,6 +12,8 @@ const {
     minValue,
     maxValue,
     passwordCount,
+    primaryColor,
+    textColor,
 } = defaultParameters;
 
 const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -239,3 +241,20 @@ export const useModal = create((set) => ({
         }));
     },
 }));
+
+export const useColor = create(
+    persist(
+        (set) => ({
+            primaryColor,
+            textColor,
+            setPrimaryColor: (key, value) => {
+                set(() => ({
+                    [key]: value.toHexString(),
+                }));
+            },
+        }),
+        {
+            name: 'color',
+        }
+    )
+);
