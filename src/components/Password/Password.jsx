@@ -24,11 +24,7 @@ function Password() {
     }
 
     return (
-        <div
-            style={{
-                marginBottom: '15px',
-            }}
-        >
+        <div className={cls.Passwords}>
             {passwords.map((password, key) => {
                 return (
                     <Paragraph
