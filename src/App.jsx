@@ -1,3 +1,6 @@
+import { ButtonsBlock } from '@components/ButtonsBlock/';
+import { CopyAllButton } from '@components/CopyAllButton';
+import { DownloadButton } from '@components/DownloadButton';
 import { GenerateButton } from '@components/GenerateButton';
 import { Header } from '@components/Header';
 import { OverlayButtons } from '@components/OverlayButtons';
@@ -32,9 +35,15 @@ function App() {
                 <OverlayButtons />
                 <Header />
                 <Password />
+                <ButtonsBlock>
+                    <CopyAllButton />
+                    <DownloadButton />
+                </ButtonsBlock>
                 <Slider />
                 <Settings />
-                <GenerateButton />
+                <ButtonsBlock>
+                    <GenerateButton />
+                </ButtonsBlock>
             </ConfigProvider>
         </>
     );

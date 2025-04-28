@@ -3,7 +3,6 @@ import { playWisp } from '@utils/playWisp';
 import { Button } from 'antd';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import cls from './GenerateButton.module.scss';
 
 function GenerateButton() {
     const { t } = useTranslation();
@@ -25,15 +24,15 @@ function GenerateButton() {
     }
 
     return (
-        <div className={cls.ButtonBlock}>
+        <>
             <Button
-                className={cls.GenerateButton}
+                className={'custom-button'}
                 type="primary"
                 onClick={clickHandler}
             >
                 {t('Сгенерировать')}
             </Button>
-        </div>
+        </>
     );
 }
 
