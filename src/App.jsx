@@ -8,12 +8,13 @@ import { Password } from '@components/Password';
 import { Settings } from '@components/Settings';
 import { Slider } from '@components/Slider';
 import { useKonamiCode } from '@hooks/useKonamiCode';
-import { useColor, useCrigneMode } from '@store';
+import { useAdvancedMode, useColor, useCrigneMode } from '@store';
 import { playWisp } from '@utils/playWisp';
 import { ConfigProvider } from 'antd';
 
 function App() {
     const activeCringeMode = useCrigneMode((state) => state.activeCringeMode);
+    const advancedMode = useAdvancedMode((state) => state.advancedMode);
     const primaryColor = useColor((state) => state.primaryColor);
 
     useKonamiCode(() => {
@@ -35,10 +36,14 @@ function App() {
                 <OverlayButtons />
                 <Header />
                 <Password />
-                <ButtonsBlock>
-                    <CopyAllButton />
-                    <DownloadButton />
-                </ButtonsBlock>
+                {advancedMode ? (
+                    <ButtonsBlock>
+                        <CopyAllButton />
+                        <DownloadButton />
+                    </ButtonsBlock>
+                ) : (
+                    ''
+                )}
                 <Slider />
                 <Settings />
                 <ButtonsBlock>
