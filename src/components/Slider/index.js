@@ -1,3 +1,3 @@
-import _Slider from './Slider';
+import Slider_ from './Slider';
 
-export { _Slider as Slider };
+export { Slider_ as Slider };

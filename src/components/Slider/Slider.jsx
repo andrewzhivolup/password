@@ -3,7 +3,7 @@ import { Slider } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cls from './Slider.module.scss';
 
-function _Slider() {
+function Slider_() {
     const { t } = useTranslation();
     const passwordLength = useSettings((state) => state.passwordLength);
     const setPasswordLength = useSettings((state) => state.setPasswordLength);
@@ -24,7 +24,7 @@ function _Slider() {
     return (
         <div className={cls.Slider}>
             <Slider
-                defaultValue={passwordLength}
+                value={passwordLength}
                 min={minPasswordLength}
                 max={maxPasswordLength}
                 marks={marks}
@@ -38,4 +38,4 @@ function _Slider() {
     );
 }
 
-export default _Slider;
+export default Slider_;
