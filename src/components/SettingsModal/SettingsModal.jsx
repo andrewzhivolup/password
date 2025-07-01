@@ -1,7 +1,7 @@
 import { useResetSettings } from '@hooks/useResetSettings';
 import { useAdvancedMode, useModal } from '@store';
 import { Modal, Tabs } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { GraphicSettingsTab } from './GraphicSettingsTab';
 import { ModalTitle } from './ModalTitle';
@@ -17,8 +17,14 @@ function SettingsModal() {
     const setIsOpenModal = useModal((state) => state.setIsOpenModal);
 
     const advancedMode = useAdvancedMode((state) => state.advancedMode);
+    const isFirstRender = useRef(true);
 
     useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false; 
+            return;
+        }
+
         if (!advancedMode) {
             setActiveKey('4');
             resetSettings();
